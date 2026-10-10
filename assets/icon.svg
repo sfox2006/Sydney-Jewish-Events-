@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Star of David">
+  <rect width="64" height="64" rx="14" fill="#ffffff"/>
+  <g fill="none" stroke="#0038B8" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="32,10 51.053,43 12.947,43"/>
+    <polygon points="32,54 12.947,21 51.053,21"/>
+  </g>
+</svg>

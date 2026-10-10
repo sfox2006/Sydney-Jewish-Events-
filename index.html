@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Jewish life in Sydney: Shabbat, social, learning and culture." />
+  <meta name="theme-color" content="#0038B8" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sydney Jewish" />
+  <title>Sydney Jewish Events</title>
+  <link rel="canonical" href="https://sfox2006.github.io/Sydney-Jewish-Events-/" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sydney Jewish Events" />
+  <meta property="og:title" content="Sydney Jewish Events" />
+  <meta property="og:description" content="Jewish life in Sydney: Shabbat, social, learning and culture." />
+  <meta property="og:url" content="https://sfox2006.github.io/Sydney-Jewish-Events-/" />
+  <meta property="og:image" content="https://sfox2006.github.io/Sydney-Jewish-Events-/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Sydney Jewish Events" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sydney Jewish Events" />
+  <meta name="twitter:description" content="Jewish life in Sydney: Shabbat, social, learning and culture." />
+  <meta name="twitter:image" content="https://sfox2006.github.io/Sydney-Jewish-Events-/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,400..600,0..1,0" />
+  <link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to events</a>
+
+  <div class="sticky-chrome">
+  <header class="topbar">
+    <h1 class="brand-title">
+      <button type="button" class="brand-home" id="brand-home">
+        <span class="eyebrow">Sydney, Australia</span>
+        <span class="brand-lockup">
+          <img class="brand-mark" src="assets/icon.svg" width="44" height="44" alt="" />
+          <span class="brand-name"><span class="w-city">Sydney</span> <span class="w-jewish">Jewish</span> Events</span>
+        </span>
+        <span class="brand-sub">Jewish life in Sydney: Shabbat, social, learning and culture</span>
+      </button>
+    </h1>
+    <div class="top-actions">
+      <div class="toolbar-line">
+        <div class="top-actions-row" id="overflow-menu">
+          <button type="button" class="view-toggle" id="view-toggle" aria-pressed="false">
+            <span class="ms" aria-hidden="true">calendar_month</span>
+            <span id="view-toggle-label">Calendar</span>
+          </button>
+          <button type="button" class="btn-text" id="refresh-events">
+            <span class="ms" aria-hidden="true">refresh</span>
+            Refresh
+          </button>
+          <button type="button" class="btn-text" id="about-open">About</button>
+          <a class="btn-email" href="#signup">Weekly email</a>
+        </div>
+        <button type="button" class="install-app" id="install-app" hidden>
+          <span class="ms" aria-hidden="true">install_mobile</span>
+          Install app
+        </button>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="overflow-menu" aria-label="Open menu">
+          <span class="ms" aria-hidden="true">menu</span>
+        </button>
+      </div>
+      <p class="refresh-status" id="refresh-status" role="status" aria-live="polite"></p>
+    </div>
+  </header>
+  <div class="phone-bar" id="phone-bar">
+    <div class="phone-search-row">
+      <div id="phone-search-slot"></div>
+      <button type="button" class="filters-open-btn phone-filters" id="open-filters-phone" aria-haspopup="dialog" aria-controls="sidebar">
+        <span class="ms" aria-hidden="true">tune</span>
+        Filters
+        <span class="filter-count" data-filter-count hidden>0</span>
+      </button>
+    </div>
+    <div class="phone-dayrow">
+      <div class="phone-strip" id="phone-strip" role="tablist" aria-label="Upcoming days"></div>
+    </div>
+  </div>
+  </div>
+
+  <div class="layout">
+    <button type="button" class="sheet-backdrop" id="sheet-backdrop" aria-label="Close filters" hidden></button>
+    <aside class="sidebar" id="sidebar" aria-label="Event filters">
+      <div class="sheet-only sheet-chrome">
+        <span class="sheet-grabber" aria-hidden="true"></span>
+        <div class="sheet-title-row">
+          <h2 id="filters-heading">Filters</h2>
+          <button type="button" class="text-link" id="sheet-clear">Clear filters</button>
+        </div>
+      </div>
+      <div class="sidebar-scroll">
+
+      <div id="search-home">
+      <div class="filter-block" id="search-block">
+        <label class="filter-label" for="search">Search</label>
+        <div class="search-field">
+          <span class="ms" aria-hidden="true">search</span>
+          <input type="search" id="search" placeholder="Title, venue, organiser" autocomplete="off" />
+        </div>
+      </div>
+      </div>
+
+      <div class="filter-block" id="topic-block" hidden>
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="topic-panel">
+          <span class="filter-label" id="topic-label">Topics</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="topic-panel">
+          <div class="chip-row" id="topic-group" data-filter="topic" role="group" aria-labelledby="topic-label"></div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="category-panel">
+          <span class="filter-label" id="category-label">Category</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="category-panel">
+        <div class="category-list" id="category-list" role="group" aria-labelledby="category-label">
+          <label class="category-row">
+            <input type="checkbox" value="shabbat_holidays" />
+            <span class="category-swatch" style="background:#0038B8"></span>
+            <span class="category-name">Shabbat and holidays</span>
+            <span class="category-count" data-count-for="shabbat_holidays">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="services" />
+            <span class="category-swatch" style="background:#0A1F5C"></span>
+            <span class="category-name">Services</span>
+            <span class="category-count" data-count-for="services">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="social_young_professionals" />
+            <span class="category-swatch" style="background:#1E40AF"></span>
+            <span class="category-name">Young professionals</span>
+            <span class="category-count" data-count-for="social_young_professionals">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="learning" />
+            <span class="category-swatch" style="background:#5B21B6"></span>
+            <span class="category-name">Learning</span>
+            <span class="category-count" data-count-for="learning">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="arts_culture" />
+            <span class="category-swatch" style="background:#9D174D"></span>
+            <span class="category-name">Arts and culture</span>
+            <span class="category-count" data-count-for="arts_culture">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="food_drink" />
+            <span class="category-swatch" style="background:#9A3412"></span>
+            <span class="category-name">Food and drink</span>
+            <span class="category-count" data-count-for="food_drink">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="community_service" />
+            <span class="category-swatch" style="background:#065F46"></span>
+            <span class="category-name">Community service</span>
+            <span class="category-count" data-count-for="community_service">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="israel" />
+            <span class="category-swatch" style="background:#075985"></span>
+            <span class="category-name">Israel</span>
+            <span class="category-count" data-count-for="israel">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="sports_fitness" />
+            <span class="category-swatch" style="background:#166534"></span>
+            <span class="category-name">Sports and fitness</span>
+            <span class="category-count" data-count-for="sports_fitness">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="family" />
+            <span class="category-swatch" style="background:#854D0E"></span>
+            <span class="category-name">Family</span>
+            <span class="category-count" data-count-for="family">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="networking" />
+            <span class="category-swatch" style="background:#3730A3"></span>
+            <span class="category-name">Networking</span>
+            <span class="category-count" data-count-for="networking">0</span>
+          </label>
+          <label class="category-row">
+            <input type="checkbox" value="other" />
+            <span class="category-swatch" style="background:#44403C"></span>
+            <span class="category-name">Other</span>
+            <span class="category-count" data-count-for="other">0</span>
+          </label>
+        </div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="movement-panel">
+          <span class="filter-label" id="movement-label">Movement</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="movement-panel">
+        <div class="chip-row" data-filter="movement" role="group" aria-labelledby="movement-label">
+          <button type="button" class="chip" data-value="reform" aria-pressed="false">Reform</button>
+          <button type="button" class="chip" data-value="conservative" aria-pressed="false">Conservative</button>
+          <button type="button" class="chip" data-value="orthodox" aria-pressed="false">Orthodox</button>
+          <button type="button" class="chip" data-value="chabad" aria-pressed="false">Chabad</button>
+          <button type="button" class="chip" data-value="pluralistic" aria-pressed="false">Pluralistic</button>
+          <button type="button" class="chip" data-value="secular_cultural" aria-pressed="false">Secular / cultural</button>
+          <button type="button" class="chip" data-value="israeli" aria-pressed="false">Israeli</button>
+          <button type="button" class="chip" data-value="unknown" aria-pressed="false">Unknown</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="format-panel">
+          <span class="filter-label" id="format-label">Format</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="format-panel">
+        <div class="segmented segmented-4" role="radiogroup" aria-labelledby="format-label" data-filter="format">
+          <button type="button" role="radio" data-value="all" aria-checked="true">All</button>
+          <button type="button" role="radio" data-value="in_person" aria-checked="false">In person</button>
+          <button type="button" role="radio" data-value="hybrid" aria-checked="false">Hybrid</button>
+          <button type="button" role="radio" data-value="online" aria-checked="false">Online</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="cost-panel">
+          <span class="filter-label" id="cost-label">Cost</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="cost-panel">
+        <div class="segmented segmented-4" role="radiogroup" aria-labelledby="cost-label" data-filter="cost">
+          <button type="button" role="radio" data-value="all" aria-checked="true">All</button>
+          <button type="button" role="radio" data-value="free" aria-checked="false">Free</button>
+          <button type="button" role="radio" data-value="paid" aria-checked="false">Paid</button>
+          <button type="button" role="radio" data-value="unknown" aria-checked="false">Unknown</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="audience-panel">
+          <span class="filter-label" id="audience-label">Audience</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="audience-panel">
+        <div class="chip-row" data-filter="audience" role="group" aria-labelledby="audience-label">
+          <button type="button" class="chip" data-value="20s_30s" aria-pressed="false">Young adults 20s-30s</button>
+          <button type="button" class="chip" data-value="students" aria-pressed="false">Students</button>
+          <button type="button" class="chip" data-value="families" aria-pressed="false">Families</button>
+          <button type="button" class="chip" data-value="everyone" aria-pressed="false">Everyone</button>
+          <button type="button" class="chip" data-value="seniors" aria-pressed="false">Seniors</button>
+          <button type="button" class="chip" data-value="unknown" aria-pressed="false">Unknown</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="age-panel">
+          <span class="filter-label" id="age-label">Age</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="age-panel">
+        <div class="segmented segmented-4" role="radiogroup" aria-labelledby="age-label" data-filter="age">
+          <button type="button" role="radio" data-value="all" aria-checked="true">All</button>
+          <button type="button" role="radio" data-value="all_ages" aria-checked="false">All ages</button>
+          <button type="button" role="radio" data-value="18+" aria-checked="false">18+</button>
+          <button type="button" role="radio" data-value="21+" aria-checked="false">21+</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="time-panel">
+          <span class="filter-label" id="time-label">Time of day</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="time-panel">
+        <div class="chip-row" data-filter="time" role="group" aria-labelledby="time-label">
+          <button type="button" class="chip" data-value="morning" aria-pressed="false" title="Before 11:00 Sydney time">Morning</button>
+          <button type="button" class="chip" data-value="midday" aria-pressed="false" title="11:00–12:59 Sydney time">Midday</button>
+          <button type="button" class="chip" data-value="early_afternoon" aria-pressed="false" title="1:00–3:29 pm Sydney time">Early afternoon</button>
+          <button type="button" class="chip" data-value="late_afternoon" aria-pressed="false" title="3:30–5:29 pm Sydney time">Late afternoon</button>
+          <button type="button" class="chip" data-value="evening" aria-pressed="false" title="5:30 pm Sydney time and later">Evening</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="perk-panel">
+          <span class="filter-label" id="perk-label">Highlights</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="perk-panel">
+        <div class="chip-row" data-filter="perk" role="group" aria-labelledby="perk-label">
+          <button type="button" class="chip" data-value="free_entry" aria-pressed="false">Free entry</button>
+          <button type="button" class="chip" data-value="free_food" aria-pressed="false">Free food</button>
+          <button type="button" class="chip" data-value="free_drinks" aria-pressed="false">Free drinks</button>
+          <button type="button" class="chip" data-value="outdoor" aria-pressed="false">Outdoor</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <button type="button" class="section-toggle" aria-expanded="true" aria-controls="dates-panel">
+          <span class="filter-label" id="dates-label">Dates</span>
+          <span class="ms section-chevron" aria-hidden="true">expand_less</span>
+        </button>
+        <div class="section-body" id="dates-panel">
+          <div class="filter-footer">
+            <button type="button" id="more-dates" aria-expanded="false" aria-controls="date-range">More: dates</button>
+            <button type="button" class="text-link" id="clear-filters">Clear filters</button>
+          </div>
+          <div id="date-range" class="date-range" hidden>
+            <label>From <input type="date" id="date-from" /></label>
+            <label>To <input type="date" id="date-to" /></label>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="sheet-actions sheet-only">
+        <button type="button" class="sheet-clear-bottom" id="sheet-clear-bottom">Clear</button>
+        <button type="button" class="sheet-apply" id="close-filters">Show events</button>
+      </div>
+    </aside>
+
+    <main class="main" id="main">
+      <section class="newsletter" aria-labelledby="newsletter-heading">
+        <div class="newsletter-copy">
+          <span class="newsletter-kicker">Newsletter</span>
+          <h2 id="newsletter-heading">Get the weekly email</h2>
+          <p>A Sunday note of Jewish life in Sydney.</p>
+        </div>
+        <a class="newsletter-cta" href="#signup">Get the weekly email</a>
+      </section>
+
+      <div class="heading-row">
+        <div class="heading-left">
+          <button type="button" class="week-nav" id="week-prev" hidden aria-label="Previous week">
+            <span class="ms" aria-hidden="true">chevron_left</span>
+          </button>
+          <h2 class="main-title" id="main-title">Next three days</h2>
+          <button type="button" class="week-nav" id="week-next" hidden aria-label="Next week">
+            <span class="ms" aria-hidden="true">chevron_right</span>
+          </button>
+          <p class="main-range" id="main-range"></p>
+          <button type="button" class="text-link back-today" id="back-today" hidden>Back to today</button>
+        </div>
+        <div class="heading-right">
+          <button type="button" class="filters-open-btn" id="open-filters" aria-haspopup="dialog" aria-controls="sidebar">
+            <span class="ms" aria-hidden="true">tune</span>
+            Filters
+            <span class="filter-count" data-filter-count hidden>0</span>
+          </button>
+          <p class="tz-label">Sydney time</p>
+        </div>
+      </div>
+
+      <p id="results-meta" class="sr-only" aria-live="polite"></p>
+
+      <div id="list-view">
+        <div id="event-list" aria-label="Events"></div>
+      </div>
+      <div id="cal-view" hidden>
+        <div id="week-board" class="week-board" aria-label="Week"></div>
+        <div id="day-strip" class="day-strip" role="tablist" aria-label="Days this week"></div>
+        <div id="strip-day" class="strip-day"></div>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="about-dialog" aria-labelledby="about-heading">
+    <div class="dialog-head">
+      <p class="eyebrow">About</p>
+      <button type="button" class="icon-btn" id="about-close" aria-label="Close about">
+        <span class="ms" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <h2 id="about-heading">What this is</h2>
+    <p class="about-lead">
+      Jewish community events in Sydney: Shabbat, services, learning, culture, and more, in person, hybrid, and online. Events are checked against each organiser's own page.
+    </p>
+    <dl class="about-facts">
+      <div>
+        <dt>Window</dt>
+        <dd>The list and calendar show events from today through the next 31 days, in Sydney time. A multi-day event is listed on every day it runs, with a Day N of M badge.</dd>
+      </div>
+      <div>
+        <dt>Sources</dt>
+        <dd>Synagogues and Jewish organisations across Sydney, including The Great Synagogue in the CBD, Central Synagogue in Bondi Junction, Emanuel Synagogue in Woollahra, Shalom Collective, the NSW Jewish Board of Deputies, the Zionist Council of NSW, Sydney Jewish Museum, JewishCare, Maccabi NSW, and the Jewish International Film Festival at Ritz Cinemas in Randwick. Details are verified against the organiser's own pages.</dd>
+      </div>
+      <div>
+        <dt>Unknown</dt>
+        <dd>Anything that cannot be confirmed is shown as Unknown. Unknown movement stays Unknown and is not grouped with a denomination. Unknown cost is listed on its own and is never treated as free. Unknown audience is listed on its own.</dd>
+      </div>
+      <div>
+        <dt>Audience</dt>
+        <dd>Young adults 20s-30s is its own audience.</dd>
+      </div>
+      <div>
+        <dt>Search</dt>
+        <dd>Matches any selected topic, or words in the title, description, organiser, or venue.</dd>
+      </div>
+      <div>
+        <dt>Times</dt>
+        <dd>Sydney time (Australia/Sydney).</dd>
+      </div>
+      <div>
+        <dt>Maintenance</dt>
+        <dd>Updated daily.</dd>
+      </div>
+      <div>
+        <dt>Install</dt>
+        <dd>Use Install app in the header. It stays available unless this site is already open as an installed app. When the browser can install directly, the button opens that prompt. Otherwise it shows the steps for your browser. Pull down on the list to refresh. Refresh loads the latest published events.</dd>
+      </div>
+      <div>
+        <dt>Newsletter</dt>
+        <dd>Weekly email is coming soon. There is no signup form yet.</dd>
+      </div>
+    </dl>
+    <p class="about-note">Not exhaustive, and not an official calendar.</p>
+  </dialog>
+
+  <dialog id="signup-dialog" aria-labelledby="signup-heading">
+    <div class="dialog-head">
+      <p class="eyebrow">Newsletter</p>
+      <button type="button" class="icon-btn" id="signup-close" aria-label="Close">
+        <span class="ms" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <h2 id="signup-heading">Weekly email coming soon</h2>
+  </dialog>
+
+  <dialog id="install-dialog" aria-labelledby="install-heading">
+    <div class="dialog-head">
+      <p class="eyebrow">Install</p>
+      <button type="button" class="icon-btn" id="install-close" aria-label="Close install instructions">
+        <span class="ms" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <h2 id="install-heading">Install app</h2>
+    <p id="install-instructions">Open the browser menu and look for Install app or Add to Home Screen.</p>
+  </dialog>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
